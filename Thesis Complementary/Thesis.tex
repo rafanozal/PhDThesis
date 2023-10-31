@@ -1,0 +1,233 @@
+%\ (!!) You need to compile twice to make the internal references work
+
+%---------------------------------------------------------------------------
+%    Document type
+%---------------------------------------------------------------------------
+\documentclass[12pt,twoside,a4paper,fleqn, english]{report}
+
+
+%---------------------------------------------------------------------------
+%    All the libraries and includes
+%---------------------------------------------------------------------------
+
+
+
+
+
+% General packages
+\usepackage[utf8]{inputenc}                          % Allows for UTF-8 characters
+\usepackage{alphabeta}                               % Allows for Greek characters without going into math mode
+\usepackage[T1]{fontenc}                             % For special characters
+
+\usepackage{url}                                     % Allows URLs in the PDF document
+\usepackage{hyperref}                                % Allows for links with hidden URL behind arbitrary text
+
+\usepackage[acronym]{glossaries}                     % Allows automatic glossaries
+
+\usepackage[dvipsnames]{xcolor}                      % Add more color texts and backgrounds (dvips set)
+
+\usepackage{pdfpages}                                % Allows for adding PDFs documents (annex)
+
+\usepackage{chemformula}                             % Write chemical formulas
+\usepackage{amsmath}                                 % For the equation* environment
+
+\usepackage[skip=12pt plus1pt, indent=40pt]{parskip} % Define space between paragraphs and indentation
+
+\usepackage{verbatim}                                % Allows for commenting out large portions of the text
+
+
+
+
+% Tables
+\usepackage{adjustbox}                               % Allows table rotation
+\usepackage{makecell}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{hhline}
+
+\usepackage{siunitx}                                 % Align with respect points
+
+%\captionsetup[table]{font=small}                     % Set the table captions slightly smaller than the main text
+
+
+% Figures
+\usepackage{subcaption}                              % Needed for sub-figures
+\usepackage{caption}                                 % Allow for captions in figures
+\captionsetup[figure]{font=small}                    % Set figure text slightly smaller than the main text
+
+% Citations
+\usepackage{cite}                                    % Orders many citation[1,2,3] -> [1-3]
+\usepackage{STSStyle}                                % Template styles, delete this eventually
+
+
+
+% Language-specific
+%\usepackage[spanish, norsk, greek, english]{babel}   % If you want to force the headings into a specific language
+                                                      % change the order of this to the last one
+
+% Style
+
+
+% Only one of the two following blocks should be used
+
+% -------------------------------
+% Serif font for printing
+% -------------------------------
+%\usepackage{charter}
+
+% -------------------------------
+% Sans-Serif font for screens
+% -------------------------------
+
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+
+%\renewcommand*\familydefault{\sfdefault}
+
+%\renewcommand{\familydefault}{\bch}
+%\renewcommand{\familydefault}{\sfdefault}             % Change all the fonts to Sans-serif for proper screen reading
+                                                      % This needs to be changed to the default Serif typeset for printing
+
+
+%---------------------------------------------------------------------------
+% List of abbreviations
+%---------------------------------------------------------------------------
+    \input{symbols}	
+
+
+%---------------------------------------------------------------------------
+% Page header (Please don't change)
+%---------------------------------------------------------------------------
+\setlength{\parindent}{0em}                 % Disables paragraph indentation
+\rhead[\nouppercase{\rightmark}]{\thepage}  % Special headings
+\lhead[\thepage]{\nouppercase{\leftmark}}   % Special headings
+\cfoot{}
+
+
+
+\begin{document}
+
+%---------------------------------------------------------------------------
+%     Title page
+%---------------------------------------------------------------------------
+\pagestyle{empty}
+\begin{center}
+    \parbox[c][\textheight][t]{\textwidth}{
+    
+        \vspace{-2cm}
+        %\begin{flushleft}
+        \begin{left}
+
+            % Logo
+            \includegraphics[width=13cm]{figures/Others/UiT_Logo_Eng_Bla_RGB.png}\\
+
+            % Institute and Faculty
+            \setlength{\parindent}{4em}                 % Enables indentation momentarily
+            \vspace{0.6cm}
+            \large Fakultet for naturvitenskap og teknologi \par
+            \large Institutt for Informatikk \\
+
+            % Thesis title
+            \vspace{0.15cm}
+            \Large \textbf{Epidemiology Network Analysis (II)}\\
+
+            % Author and Subtitle
+            \vspace{0.05cm}
+            \normalsize Rafael Adolfo Nozal Cañadas \par  
+            \normalsize Complementary mathematical and biological background
+            
+            A dissertation for the degree of Philosophiae Doctor  \\ \rightline{\today}
+            
+           
+            % Big bottom figure
+            \vspace{0.25cm}
+            \centering
+            \noindent
+            \makebox[\textwidth]{\includegraphics[trim={0 0 0 3cm},clip, width=1.5\textwidth]{figures/Others/il_fullxfull.354517109_sgyq.jpg}} % Override the page setting and occupy it all.
+
+            % Fill the rest of the page
+            \vfill  
+            
+        %\end{flushleft}
+        \end{left}
+    }  % There is an error here which complain that \begin{left} is math mode and is not closed with $$. It works fine, ignore it.
+\end{center}
+\cleardoublepage
+
+
+
+%---------------------------------------------------------------------------
+% Preamble
+%
+% This part is just for enumerating the beginning with Roman numbers. This
+% includes the Preface, Acknowledgements, ...
+%---------------------------------------------------------------------------
+\pagenumbering{roman} 				% Begin Roman page numbering (i,ii,...)
+
+
+
+%---------------------------------------------------------------------------
+% Preface
+%---------------------------------------------------------------------------
+\chapter*{Preface}
+    \addcontentsline{toc}{chapter}{Abstract}
+
+        The main Ph.D. thesis document takes for granted that the readers are expert knowledge in all interdisciplinary fields which are analyzed throughout the document. This is a challenging assumption given the variety of topics discussed across the document. For the reader's convenience, in this document I have gathered a comprehensive and detailed biological background behind bacteria functions with particular detail to \gls{staph}, the immune system, inflammation, and vitamin D. As well as to expand a bit more in the different mathematical background of graph theory and network analysis.
+
+        The aim of this complementary document is to provide sufficient knowledge in all these fields for the curious mind that wants to understand all background information and save the reader's time without dumping on him or her the responsibility of having to search every little detail discussed throughout the main document.
+
+        Rafael Adolfo Nozal Cañadas
+        \today
+
+    \cleardoublepage
+
+%---------------------------------------------------------------------------
+% LIST OF ABBREVIATIONS
+%
+% These are displayed in alphabetical order
+%---------------------------------------------------------------------------
+\chapter*{List of abbreviations}
+\addcontentsline{toc}{chapter}{List of abbreviations}
+
+\printglossary[type=\acronymtype,title=Abbreviations]
+
+%---------------------------------------------------------------------------
+% TABLE OF CONTENT
+%
+% This is generated automatically, you don't need to write anything
+%---------------------------------------------------------------------------
+\setcounter{tocdepth}{4}            % Sets the number of section levels in the table of contents to 4
+\tableofcontents                    % Creates the table of contents
+\cleardoublepage                    % Ends the current page
+
+
+%---------------------------------------------------------------------------
+% Chapters
+%---------------------------------------------------------------------------
+\pagestyle{fancy}               	% Fancy headings
+\pagenumbering{arabic}				% Begin arabic page numbering (1,2,...)
+\setlength{\parindent}{20pt}        % Sets default paragraph indentation to 20 pt 
+
+% Introduction to networks
+\input{chapters/ChapterNETWORK}
+
+% Introduction to Staph
+\input{chapters/ChapterSTAPH}
+
+% Introduction to Immunology and Inflammation (not ready for review)
+\input{chapters/ChapterINFLAMMATION}
+
+% Introduction to Vitamin D
+\input{chapters/ChapterVITAMIND}
+
+%---------------------------------------------------------------------------
+% References and Bibliography
+% 
+% Add them manually to the references.bib file
+%---------------------------------------------------------------------------
+\bibliographystyle{unsrt}                                     % applies an unsorted citation style for the references
+%\bibliography{references.bib,./Bibliography/BIBmethod.bib,./Bibliography/BIBinflammation.bib,./Bibliography/BIBvitaminD.bib,./Bibliography/BIBnetwork.bib}   % loads the references from the bibliography files and creates the Bibliography section   
+
+\bibliography{references.bib}
+
+\end{document}

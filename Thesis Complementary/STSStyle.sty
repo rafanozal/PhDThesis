@@ -1,0 +1,99 @@
+%==============================================================================
+% ETHIDSC -- (ethidsc.sty) Style file
+% A LaTeX package providing new style definitions and commands.
+% The ethidsc-package defines a title page and an info page for term papers
+% Author: Xin Shen
+%         Information Laboratory
+%         Department of Information Technology
+%         Uppsala University
+%
+%
+%==============================================================================
+\def\Presentation@Version{10.1}
+
+%\typeout{providing new style definitions and commands ---}
+%\typeout{Xin Shen, Uppsala University, Sweden, 2023/03/30}
+
+
+
+%\RequirePackage{times}                          % Sets default thesis font as Times
+\RequirePackage[onehalfspacing]{setspace}
+
+\ProcessOptions
+\RequirePackage{svg}
+\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{graphicx}
+\RequirePackage[dvips]{epsfig} 
+\RequirePackage{float}
+\RequirePackage{fancyhdr}
+
+\RequirePackage{pstricks,pst-plot,psfrag}
+\RequirePackage{multirow}
+\RequirePackage{rotating}
+
+\RequirePackage[dvipdfm]{geometry}
+
+\RequirePackage[sort&compress,numbers]{natbib}
+\RequirePackage{comment}
+\RequirePackage{placeins}
+
+\RequirePackage{wrapfig}
+\RequirePackage{floatflt}
+\RequirePackage{outlines}
+\RequirePackage[version=4]{mhchem}
+
+
+\RequirePackage{mhchem}
+\RequirePackage{graphicx}
+
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{tabularx}
+\RequirePackage{lscape}
+
+\RequirePackage{tabto}
+\RequirePackage{ltablex}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,      
+    urlcolor=cyan,
+    breaklinks=true,
+    pdftitle={PhD Thesis},
+    pdfpagemode=FullScreen,
+    citecolor=red,
+}
+
+\RequirePackage[labelfont=bf,textfont=md]{caption}
+% =======================================
+%	\usepackage[dvipdfm]{geometry}
+	\setlength\paperheight {297mm}%
+	\setlength\paperwidth  {210mm}%
+
+	%PAGE LAYOUT 2cm margin on all four sides
+	\setlength{\voffset}{-1in}
+	\setlength{\hoffset}{-1in}
+
+	\setlength{\oddsidemargin}{3cm}
+	\setlength{\evensidemargin}{3cm}
+
+	\setlength{\topmargin}{2.3cm} % -1in subtract latex default margin (1 inch) from topmargin
+
+%	\setlength{\headheight}{14.mm} %platz für kopfzeile
+%	\setlength{\headsep}{+11.mm} %freiraum nach kopfzeile
+%	\addtolength{\topmargin}{0.0mm} %rest, damit die geforderten 2.5 cm erfüllt werden
+
+	\setlength{\textheight}{231mm} %247mm 29.7cm-5cm = 24.7cm
+
+%	\setlength{\footskip}{+20mm}
+
+	\setlength{\textwidth}{150mm} %!!! %21cm - 5cm = 16cm
+
+
+%	\addtolength{\oddsidemargin}{-1in} %subtract latex default margin (1 inch) from oddsidemargin
+	
+
+%	\addtolength{\evensidemargin}{-1in}  %subtract latex default margin (1 inch) from evensidemargin
+%	\setlength{\marginparwidth}{10cm}
+	\setlength{\parindent}{0pt}
+
