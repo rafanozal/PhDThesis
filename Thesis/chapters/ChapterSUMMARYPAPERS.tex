@@ -1,0 +1,77 @@
+%*****************************************
+\chapter{Summary of main papers}
+\label{chapter:summay}
+%*****************************************
+\section{Paper A}
+
+\textbf{Social network analysis of \textit{Staphylococcus aureus} carriage in a general youth population.}
+
+We explored the prevalence of \gls{staph} and risk factors in the \gls{ff1} population. Carriage prevalence was 30.4\% for direct culture and 42.6\% for enrichment broth. Both direct culture and enrichment broth showed a significant difference between males and females; with males having 36.4\% and 48.1\% prevalence, and females having 24\% and 36.8\% prevalence respectively. No other host factor was significant.
+
+Students who attend the same high school tend to share the same \gls{spa}-type between them, which indicates that they share the same source of infection. The simulations indicated that school transmission is significant in the school network if the direct culture is used, and significant in the overall, physical, and school network if the enrichment culture is used. Simulation regarding \gls{spa}-type similarity indicated that transmission is relevant in all networks.
+
+Males showed to have less connectivity than females, however, they have a higher prevalence. Autocorrelation regression also indicates that transmission happens in the network, but only the direct culture indicates that sex is a relevant factor. Our simulations indicate that sex and \gls{pa} are relevant in both cases, which seems to indicate that women are at more risk of person-to-person transmission due to their higher connectivity. Autocorrelation also shows that \gls{bmi} and PA were relevant in both cases and the study program and alcohol for enrichment only. Our simulations indicate BMI and Alcohol for the direct culture only.
+
+Finally, we estimated that a random student has an average increased risk of transmission of 3.5\% with logistic regression, and an increased risk of 5\% with auto-correlation, for each additional friend who is \textit{S. aureus} carrier.
+
+\section{Paper B}
+
+\textbf{“Friends are the sunshine of life” Social influence on vitamin D in a general youth arctic population.}
+
+Vitamin D is of special interest in the Arctic region; here we explored if friends tend to have similar levels. While vitamin D is not contagious from person to person, similar levels would indicate that friends share the same environment, activities, diets, or habits that promote or hinder vitamin D absorption.
+
+First, we presented all possible factors that affect \gls{25ohd} levels in the blood. Diseases and medications were not relevant for this population. Then we checked which variables had a bias for each high school. This is because \gls{uvb} influence overwhelmingly affects vitamin D absorption, and each high school had a different date for blood extraction across the year, differing traveling to sunny regions due to school calendar holidays, and different solarium habits. Without stratification, several levels are significant, but once the high schools are investigated one by one, only sex in H8, \gls{pa} in H3, and holiday traveling in H1 and H3 were significant variables.
+
+We also found out that women influence other women into going to the solarium, however, men do not influence other men. Currently, teenagers are banned from entering solariums in Norway due to their increased risk of skin lesions and cancer.
+
+Among non-solarium goers, using logistic regression, we estimated that people with friends who have normal vitamin D levels (>50 nmol/l) have a 7.25\% chance of having normal vitamin D levels themselves for each additional normal vitamin D friend. We also checked this for high schools, and the influence was also significant among 5 of the 8 high schools.
+
+Finally, we found contradictory results in the vitamin D levels concerning diet and vitamin D supplements. That is, people, eating fatty fish which is high in D3, or taking supplements that are extremely high in D3, do not show elevated levels of 25OHD in their blood. This is impossible. In the discussion part, we mentioned how different \gls{mbms} can be used to improve the validity of dietary data, as well as \gls{met} for PA.
+
+\section{Paper C}
+
+\textbf{An introduction to network analysis for studies of medication use.}
+
+We presented how \gls{na} can help study medication usage regarding co-medications and drug interaction in the Norwegian population.
+
+NA is underutilized in \gls{dpn}. As such we provided examples of how this type of analysis can help to analyze the relationships between prescriptions, health professionals, and patients. We accompanied this with a comprehensive tutorial on how to apply these methods using R and Stata syntax.
+
+To accomplish this, we presented networks using the \gls{norpd} in the elderly population, and another network of severe \gls{ddis} using the \gls{fest}. In the results, we presented several statistics with their explanation for the reader to understand this type of analysis.
+
+\section{Result I}
+
+\textbf{Social network influences on obesity in a general youth population.}
+
+We studied how friendship and social contact influence obesity. We saw that students tend to cluster together based on their BMI. Simulations indicate that students being friends with other students of the same BMI does not seem to be at random.
+
+BMI increased almost 1kg/m² on average from FF1 to FF2. We also show that students who belong to the "Healthy" group in FF1 have fewer chances of belonging to the same group in FF2 as their number of friends with BMI > 25 increases.
+
+\section{Result II}
+
+\textbf{Social network influences on inflammatory response in a general youth population.}
+
+We found several results that suggest friends share similar inflammatory profiles among them.
+
+A student's average biomarker level tends to be similar to his / her friend's average levels as well once sex and high school are accounted for. Similarities increase if we compare samples taken early in the academic year with samples taken later on. Furthermore, we introduced a distance metric which also suggests that friends have similar levels to non-friends.
+
+We also tried to compare inflammation induced via social contact with inflammation resulting from obesity complications. Some biomarkers that correlated with anthropometric variables are not present in the social influence results; suggesting that the inflammation effect has a mix of both.
+
+\section{Result III}
+
+\textbf{Measuring social influence with random forest regression and artificial neural networks.}
+
+We ran two machine learning models to predict FF2 BMI based on FF1 variables sex, BMI, smoking, snuff, alcohol, and sport frequency habits; as well as the number of underweight, healthy, overweight, and obese friends. We ran these models in 6 different subsets in which students increased, decreased, or stayed in the same BMI group from FF1 to FF2.
+
+We used \gls{mdi} and \gls{shap} to measure the most important variables according to the ML models. After the initial BMI, in most cases, the total number of friends in each BMI group was evaluated as more important than the non-social variables.
+
+\section{Result IV}
+
+\textbf{Frequency consumption of medication and social network influence in a general youth population.}
+
+We studied the possibility that students can influence each other's usage of over-the-counter medicines. These are often misused with unwanted side effects, or abused due to their potential as recreational drugs.
+
+\clearpage
+
+We saw a huge disproportion of reported diseases with respect to the reported medicines that are relevant for these diseases. In particular a spike in the use of anti-inflammatories and painkillers. Consumption by sex indicates that women tend to consume more of these medicines than men.
+
+Hormonal contraceptives and painkillers seem to be associated with high schools. Anti-inflammatories and painkillers seem to be associated with sex. Simulations indicate that women who are friends share the same hormonal contraceptive brand.

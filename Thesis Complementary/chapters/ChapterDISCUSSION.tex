@@ -1,0 +1,301 @@
+%*****************************************
+\chapter{Discussion}\label{ch:discussion}
+%*****************************************
+
+% ----------------------------
+% PAPER WHATEVER:
+% ----------------------------
+% What are the main results 
+% (not going to do this, already in the previous chapter)
+
+% How do the results compare to current works (others)
+% Something something [1] and others did something too [2]
+
+% What are the impacts
+% Very important! Nobel plz
+
+% How do the results compare to the thesis (ours)
+% Similar to papers A B and C where we did something too
+
+% What are the limitations
+% Something else couldn't be done because of reasons
+
+\section{Papers and results}
+
+\subsection{Paper A}
+
+% How do the results compare to current works (others)
+
+\gls{staph} transmission has been the subject of study on several occasions. Whether it is within the same household \cite{Knox2015, Zhu2021}, same hospital and ICUs \cite{LeBihan2017, Solberg2000}, or worldwide \gls{mrsa} \cite{Ayliffe1997}. Also, social transmission of the beneficial or detrimental pathogen has been studied for \gls{hiv} \cite{Rothenberg1998}, and microbiota sharing among family and their pets \cite{Song2013}.
+
+To our knowledge, this is the first study to analyze social transmission in a general youth population. In 2023 another paper studied the spread of \gls{staph} in schools in England reaching similar results and conclusions to us \cite{vanTonder2023}.
+
+% What are the impacts
+
+We hypothesize that school is an important factor, not because the school itself is relevant, but because students spend more time together. However seasonal immunology is also a factor to be considered \cite{Lund2022}, and so far we have not been able to analyze this effect with confidence with only a one-time data point. For example, temperature, humidity, and vitamin D levels seem to drive the seasonal immunity for influenza \cite{https://doi.org/10.48550/arxiv.1908.00925}. It would be interesting to determine if a similar effect is relevant for \textit{S. aureus}, especially considering that it is an opportunistic bacterium, adjusts a time series model accordingly, so the risk of transmission can also be adjusted depending on the time of the year.
+
+% How do the results compare to the thesis (ours)
+
+Our results in \colorbox{ResultColor}{\textcolor{black}{Result III}} also show inflammation processes correlated as the academic year progresses and with schools individually. It is reasonable to think that infection risk increases in function over time, and so does the immune reaction that follows. 
+
+% What are the limitations
+
+Defining what is a carrier of \textit{S. aureus} is a difficult task in itself that took a considerable level of debate to resolve because we used two different growth methods. An alternative method to define a carrier or infected individual would be by using fuzzy logic. Fuzzy logic is a branch of mathematical logic that deals with reasoning and decision-making in situations that involve uncertainty and imprecision. Classical logic operates on binary values (true/false), whether fuzzy logic allows for degrees of truth, in which logical propositions can be partially true or partially false. This approach has been used to improve chronic disease classification and decision-support systems \cite{Thukral2019, Amirkhani2017}, and it would be interesting to see if it can perform well in graph models designed to predict disease spread in cases such as this in which a person can be a carrier of a bacterium, in different body tissues, at different enrichment levels of the sample, while also being asymptomatic.
+
+
+
+\subsection{Paper B}
+
+% How do the results compare to current works (others)
+There are plenty of studies comparing ethnicity with vitamin D \cite{Holvik2004, Bjrk2013, Martin2016, Nielsen2014, 2017, Ceccarelli2019, Smith2021}. There is also at least one study comparing socioeconomic factors with vitamin D deficiency \cite{Navarro2013}. Although these variables tend to have a strong social component, to our knowledge no previous study has tried to study the social aspect of vitamin D. Other previous studies have measured the vitamin D prevalence in Tromsø \cite{berg2014, Jorde2015, ref:berg2022}, but again not the social aspect of it.
+
+% What are the impacts AND % What are the limitations
+
+This paper is of particular interest in our Arctic population given how poorly vitamin D is absorbed via \gls{uvb} radiation in this area. We can counter bad habits such as the described negative effect of solarium and recommend better activities such as \gls{pa} so it has a spillover effect on the network. There are also plenty of external social influences regarding \gls{pa} alone \cite{ref:SportsInfluenceBook} which are not within the reach of this data and would be interesting to see and compare at the same time. Another nice follow-up would be how these recommendations would be effective in an adult and elderly population as their \gls{pa} decreases while their traveling increases but as their capacity for vitamin D metabolization decreases with age as well \cite{ref:Chalcraft2020}.
+
+One interesting approach from a public intervention point of view is that teenagers with no European background are especially vulnerable to vitamin D deficiency \cite{ref:ricketstats, ref:ricketstats, ref:Uday2017, ref:Munns2016, ref:B_Amrein2020, ref:A_Cashman2016, ref:C_Jiang2021, ref:D_Mogire2020}. In \colorbox{PaperColor}{\textcolor{black}{Paper B}} we discussed how immigrant populations tend to form strong community bonds. So public interventions targeted to this population to increase vitamin D levels would be quite effective.
+
+Here we also discuss how future projects should gather data. There are plenty of improvements that can achieve better results with \gls{mbms} and dietary data, and using \gls{met} for \gls{pa}. Within the vitamin D topic, there are plenty of contradictory results \cite{Theodoratou2014, Chowdhury2014, Welsh2014} due to poor standardization or poor experiment design \cite{ref:A_Cashman2016, ref:Sempos2018, ref:Sempos20182}. For example, in our own data, we are not taking into consideration any interactions between foods \cite{ref:Li2020, ref:Lynch1980, ref:Li2020}. It is paramount that we do not add confusion and noise to the literature; and that we start with proper data.
+
+% How do the results compare to the thesis (ours)
+
+As previously commented, the immune system seems to be influenced as time passes by. Vitamin D promotes a homoeostatic effect on the immune system. If vitamin D is depleted over time, such as is the case in Tromsø where students come back from sunbathing in August and local UVB radiation is not high enough to fill them again, it would mean that unwanted type 2 immune reactions \cite{Lloyd2018} are going to increase.
+
+\subsection{Paper C}
+
+% How do the results compare to current works (others)
+
+Previous works have used network analysis to detect fraudulent opioid prescriptions \cite{Perry2019} as well as being at risk of opioid abuse \cite{Rice2012}. Another study from 2021 showed the capabilities of data mining using prescription networks in Italy \cite{Miglio2021}. Overall using SNA particularly to study prescriptions and find patterns has proven to be a useful tool for researchers and health professionals.
+
+% How do the results compare to the thesis (ours)
+
+This paper, similarly to \colorbox{ResultColor}{\textcolor{black}{Result III}}, has been composed to demonstrate potential applications of a specific methodology. The results of \gls{ddis} are explored in other articles.
+
+% What are the impacts
+
+In our study, we saw that \gls{sna} can be useful in visualizing complex interactions and measuring clusters and central nodes with different metrics. Clusters in particular could be connected to pharmacological data to see the importance of pharmacokinetic interactions.
+
+% What are the limitations
+
+The bigger downside is to be able to draw the network in a meaningful way; not because this network is difficult to draw, but because plotting it is a general downside of SNA as we discussed during the background in section \ref{background:layout}. Another downside to this network is that it is a bipartite network divided into prescriptions, patients, and medics. Bipartite networks are generally more complex to analyze. This makes the tool great for visualization and exploring but weak for hypothesis testing.
+
+\subsection{Result I}
+
+% How do the results compare to current works (others)
+
+Here we saw that social dynamics behave in similar tendencies as in other teenage populations \cite{Zhang2015, Schaefer2014, Fonseca2005, Valente2009, delaHaye2011} where it is also shown that \textit{“avoidance of overweight friends is the primary determinant of friendship patterns related to BMI.”} and \textit{“a significantly greater proportion of obese/overweight versus non-overweight youth reported difficulty in making friends”}. 
+
+% What are the limitations AND % How does the results compare to thesis (ours)
+
+A questionnaire on dietary habits, including vitamin supplementation, was given to the participants. However, our analysis of the dietary response, as shown in \colorbox{PaperColor}{\textcolor{black}{Paper B}}, shows that the self-reported diet habits are not a reliable answer, as the estimated nutritional intake from questionnaire data (selected food items with average frequencies of intake) does not correlate with the nutritional data retrieved from blood samples. As such, no nutritional data was included in this study so there is no assessment of how one person's diet influences another person's eating habits as well.
+
+Another limitation of this study, which we try to partially overcome with \colorbox{ResultColor}{\textcolor{black}{Result III}}, is that we do not address how to move students from unhealthy BMI groups to healthy BMI groups. The second limitation is how to increase the connectivity from Healthy BMI to other groups as it would seem that groups tend to be self-biased and close to people from other groups. 
+
+% What are the impacts
+
+
+
+\subsection{Result II}
+
+% How do the results compare to current works (others)
+
+There are plenty of papers that have explored the effects of inflammation and isolation \cite{Smith2020}, but to our knowledge, this is the first time that it has been studied how non-isolation influences other people's inflammation. This is important with \gls{il6} and \gls{crp} in particular as they seem to be the leading factor in inflammation affecting loneliness. There also have been several studies linking biomarker levels with obesity. To name a few, ADA has been linked in mouse models with lower obesity and insulin resistance \cite{Cui2021}. Axin-1 is correlated with glucose uptake in skeletal muscle \cite{Yue2020}. BNGF has been linked with BMI and obesity regulation in a Scandinavian population \cite{Thorleifsson2008}. Obesity-driven chemokine has been studied for CCL2, CCL13, CCL18-19, CCL23, CCL26, CXCL1, CXCL3 and CXCL14 \cite{Ignacio2016}. Patients in the obesity group had higher IL-1beta, IL-1RA, IL-2, IL-4, IL-5, IL-6, IL-8, IL-9, IL-10, IL-15, IL-17A, MCP-1/CCL2, MIP-1alpha/CCL3, MIP-1beta/CCL4, G-CSF, GM-CSF, FGF, IFN-gamma, and TNF-alpha than control group \cite{vanderZalm2020}.
+
+% How do the results compare to the thesis (ours)
+
+% Already mentioned in Paper A and referencing this one and Paper B, too many repetitions
+
+% What are the impacts
+
+Here we see a positive correlation between IL-6, waist, hip, weight, and BMI in both men and women, plus a correlation between IL-6 within some high schools, and IL-6 being quite similar in between women's friends. IL-6 acts as a pro-inflammatory cytokine and as an anti-inflammatory myokine, it suppresses inflammation caused by stress in bones and muscles during exercise and promotes bone re-absorption. Myokines function is still poorly understood but is believed to have a beneficial impact as a response to PA \cite{Ostrowski2000}, which can be one of the reasons why women seem to have similar levels given that they do more PA than men in this population.
+
+Another interesting result is that we can also see IL-10 and IL-13 correlating in women's friendships, and IL-10, IL-13, and IL-33 correlating with high school and sex. These are anti-inflammatory cytokines which would lead to believe social influence may alter the anti-inflammation profile of a student. Several chemokines related to immune hemostasis are also found across relevant results in both sexes, such as CCL 23, CCL 25, and CCL 28. In women's cluster of friends again, \gls{bdnf} is also associated with anti-inflammatory, chemotactic proteins that aid with diapedesis and extravasation of monocytes, and \gls{csf1} it regulates osteoclast proliferation and differentiation and the regulation of bone resorption which might be interesting considering the sex differences of vitamin D levels seen in \colorbox{PaperColor}{\textcolor{black}{Paper B}}.
+
+% What are the limitations
+
+A methodology shortcoming of this study is, as discussed previously in \colorbox{PaperColor}{\textcolor{black}{Paper A}}, seasonal immunity effects are not taken into consideration. The study itself could be just a signal that we are measuring seasonality as each high school has different blood extraction dates and we are just seeing proteins reflecting immunity determined by time rather than high school influence.
+
+For CRP, we found a very strong association for H6 women (R2 = 0.88, p-v < 0.001), and a weak for H6 men (R2 = 0.22, p-v = 0.11). Others \gls{apr} would be interesting to study, in particular \gls{esr} given that it takes way longer than CRP to return to normal levels after an inflammation process.
+
+\subsection{Result III}
+
+% How do the results compare to current works (others)
+
+In previous studies \cite{ElSayed2013, Zhang2015} two strategies have been theorized regarding weight loss for overweight individuals. One that increases the total connectivity in general, and another one that increases the total healthy connectivity in particular. Obese students have low average connectivity, and they tend to be friends among themselves rather than with the general population. These results seem to indicate that the second strategy is better. 
+
+% What are the impacts
+
+Initial \gls{bmi} is the most important variable by far in all models. Individuals seeking weight changes should make necessary adjustments to their goals and refrain from relying on methods that promise quick results.
+
+In all models, after FF1 BMI, \gls{mdi} evaluated healthy social contact influence in the final BMI more than any other non-social host factors including sport frequency. In general, \gls{shap} evaluates some of the total friends' variables very highly alongside sex and sports frequency. General high connectivity with healthy friends seems to be a good contributor to lower BMI or to prevent further BMI increase. General high connectivity with overweight friends seems to be a bad contributor to increasing BMI or preventing further BMI losses. Only group D seems to have a negative correlation, but the effect is small ( -0.15 BMI from 0 to 3 overweight friends ).
+
+% How do the results compare to the thesis (ours)
+
+These results follow the previous analysis done in \colorbox{ResultColor}{\textcolor{black}{Result I}} where we see that FF2 BMI is proportional with connectivity with high BMI individuals. We also observed that students have a bias toward choosing friends of the same BMI category. How to break this bias is beyond the scope of this study, but social relationships seem to be as important as doing sports in aiding overweight and obese individuals to lose weight. 
+
+% What are the limitations
+
+It would be interesting to figure out why Healthy students stopped being healthy and advanced to an Overweight or worse state. But model E seems hard to interpret by our model. Further data regarding if these people change their habits with time (i.e.: Sport was “hard” in FF1 but then “none” in FF2 two years later) would be useful. 
+
+Sports are evaluated as having high importance by \gls{mdi} and \gls{shap} to stay Healthy but seem to be of not much relevance when you increase or decrease your weight. Sports are generally also evaluated as a strong variable indicator. Sports increase the metabolism and total energy consumption, but if the energy intake is still greater than the energy spent in sports, then weight loss is not possible. In this dataset, we do not have a healthy diet adherence evaluation, as it could be for example the \gls{medas}. Further analysis that includes food questionnaires is needed to evaluate how diet is influenced by social contacts, and how important it is with respect the social influences. 
+
+In these results, we used some naive approaches to building machine learning models and used a limited set of explainability techniques. Our main goal was to show that this is useful and the results are important, rather than fine-tuning each model accordingly for each dataset; which in particular is self-evident with dataset E.
+
+\subsection{Result IV}
+
+% How do the results compare to current works (others)
+
+Other works have presented the over-the-counter usage in Norway \cite{Lorentzen2018}, and have also been speculated, such as \textit{"Parents’ symptom experience seems to influence their children’s medicine use over and above medicine use indicated by symptoms. Two potential explanations are suggested: a socialization pathway and/or a pathway through adverse living conditions."} \cite{Andersen2011}, which links medicine abuse to the social network influence. Once again, to our knowledge, no other article has analyzed the social aspect.
+
+% How do the results compare to thesis (ours)
+
+In \colorbox{PaperColor}{\textcolor{black}{Paper C}} we discussed how other works detected substance abuse using SNA. Here something similar is achieved in specific high schools showing a disproportionate amount of medicines with respect to diseases, and how social influence affects this.
+
+% What are the impacts
+
+Painkiller usage is biased within high schools. This should not happen under normal circumstances, as both the diseases related to pain, and the use of over-the-counter drugs should be spread across high schools randomly. Pain-related diseases are indeed spread fairly balanced across high schools, but not the medicine part. The use of anti-inflammatory bias in women can be explained by the use of medication during menstrual cramps. We can see that the use of Naproxen (brand name Naprocyn) is 100\% females as this is an NSAID mainly used to treat such pains.
+
+% What are the limitations
+
+The main concern of these results is whether students are using painkillers as recreational drugs, the same as seen in other populations \cite{Sung2005}. While these results should raise some attention, are not direct proof of anything. A proper follow-up questionnaire should be addressed and asked directly \textit{"Have you ever used over-the-counter medicine/self-medication with non-medical purposes? If so, in which period of time and what frequency?"}.
+
+ Previous work studied the relationship between pain threshold and friends' influence and inflammation response \cite{IordanovaSchistad2019}. The bias that we saw in painkiller consumption at the high school level might be partially explained due to some high schools having lower pain resistance in general. However, we do not have access to the pain threshold data to investigate this approach further.
+
+This data is also from the 2010s, being not a well-up-to-date reflection of current teenage drug activities. For example, in recent years "U-47700" has been popularized as a Non-Fentanyl Synthetic Opioids \cite{Baumann2020} and it could be that current teenagers are ditching painkillers for this drug, or any other alternative.
+
+
+\section{Direct influence vs common environment}
+\label{disc:directenviroment}
+
+From here, I will now proceed to address the overarching themes within the thesis.
+
+Two influences can be detected using social network analysis. The first one is the influence that is shared directly by contact, such as in the case of \colorbox{PaperColor}{\textcolor{black}{Paper A}}, where bacteria jump from person to person. The other way is by sharing the same environment as with \colorbox{ResultColor}{\textcolor{black}{Result II}}; the inflammation process cannot jump from person to person but they both can share an environment in which allergens, and irritants, or toxic compounds are present, which can lead to common inflammation reactions. Realistically, in most cases, we will have a bit of both cases all the time. In \colorbox{ResultColor}{\textcolor{black}{Result II}} we can also have a shared microbe going around the schools. In \colorbox{PaperColor}{\textcolor{black}{Paper B}} students share an environment with the same amount of UVB, and even though we were not able to measure it, it is likely that they share a similar diet and PA.
+
+A significant limitation of social network analysis is that this method is unable to tell if direct influence or common environment or both are happening and needs the support of other classical statistical methods or direct measurements, to be able to tell which are the reasons why people have common levels of something. For example, in \colorbox{ResultColor}{\textcolor{black}{Result II}} we see that people belonging to the same school share inflammation processes as the school year progresses.
+
+%Is this because schools are dirty and brewing bacteria? if so we need to go to the school and test for bacterial growth on surfaces. Is it because people have more allergies in spring? if so we need medical records about their allergies. Or it has nothing to do with shared place or time? Is this because friends become closer as the year progresses? For example, because friends are eating a diet rich in EPA and DHA? If so we need to analyze nutrient consumption.  As such we are careful to complement all our results with a significant analysis of the secondary factors to be able to tell which type of influence is happening.
+
+However, a significant advantage, is that social analysis can be done very quickly. It is unrealistic to expect constant monitoring of allergens, diets, pathogens, and so on in every environment in the population. But we can monitor and detect trends in people's health immediately. This might lead to us being able to tell that friends in a particular environment (school) are getting unhealthy levels or whatever concept we are interested in. If we were to only measure the general population instead of grouping by friends we could lose significant patterns as we show in \colorbox{ResultColor}{\textcolor{black}{Result II}}, in which analyses stratifying by sex only shows no significant results; even though the effects are already there. This could lead to being too late to do something of value to stop the health hazard in time.
+
+\section{Optimization of resources in public interventions}
+
+In the introduction (section \ref{socialinterventions}) examples of how SNA optimized public health interventions and resources with little cost were presented. This is something that we would like to validate further with our results.
+
+% Social network analysis helps in this regard by focusing public health intervention on the groups of people who would result in a higher return value.
+
+%So it would be more sensitive to advise men about symptoms, and women about transmission better
+
+For example, in \colorbox{PaperColor}{\textcolor{black}{Paper B}} we see that women influence other women into going to the solarium, but men do not influence other men. Solariums are a horrible idea that leads to a significant increase in skin cancer lesions with insubstantial benefits \cite{deGruijl2017}. As such we would like to convince the population to stop going to the solarium. Based on our results, an optimal approach would be to target women in an ad campaign rather than the general population. We see something similar in \colorbox{PaperColor}{\textcolor{black}{Paper A}} in which men are more common carriers of \textit{S. aureus}, but women are more at risk due to social contact. In \colorbox{ResultColor}{\textcolor{black}{Result III}} we associated an increased risk of obesity due to social contact with overweight friends, and a lower risk with healthy-weight friends, so a better approach would be to increase network connectivity between these two groups. \colorbox{ResultColor}{\textcolor{black}{Result IV}} shows which high schools tend to have biased use towards painkillers, so we can concentrate efforts on drug prevention campaigns there.
+
+A second important concept is the spillover effect \cite{Egami2020, Steptoe2008, Yan2015, Fletcher2018} which is discussed in \colorbox{PaperColor}{\textcolor{black}{Paper B}}. In a network, especially one with a hierarchical topology, it is possible to target the top hierarchical behavior which would make the hanging nodes copy this behavior propagating the health effects throughout the network, instead of targeting all nodes at the same time which takes time and efforts which we might not be able to afford. This is similar to any marketing campaign in which internet influencers (top nodes) are paid to promote a product among the followers (hanging nodes).
+
+
+\section{Challenges in privacy}
+
+We encountered some data points that potentially allow for the identification of individual students. This exemplifies why the use of the \gls{bcnf}, described in methodology (section \ref{ssec:normalization}), is important, as it mathematically guarantees that access to information contained in tables that a person shouldn't have access are kept in those tables and not outside of it.
+
+These events are reported back to the head of the appropriate department and corrected. In a future manuscript, we will list all the "lessons learned" from the data cleaning process and help to develop better protocols for future epidemiology studies.
+
+\section{Challenges in reproducibility}
+
+In science, you have not discovered something until you discover it and somebody else reproduces it. All our code is open source (Affero GPL3.0 \cite{ref:afferoGPL}), however, due to regulations in Norwegian law \cite{NorwayLaw1} and privacy ethics \cite{NorwayLaw2}, the data is only available upon request. For example, a legal limitation is that subjects under 16 years old must sign special consent which includes limitation to the data access. This can limit the ability of other researchers to replicate and validate the results of our studies, which can lead to a lack of confidence in the findings. This also hinders the ability to build upon our methods. Any push to allow for more flexible data access can also hinder the trust of the public who gave us the data in the first place, hindering in this case any future project.
+
+This is a very serious limitation that we need to overcome, and luckily there is one particular example that can be used to inspire future projects. There's however another project, the Tromsø Study \cite{TTStudyA}, which has a more flexible approach. For example, all the metadata is \href{https://helsedata.no/en/variables/?datakilde=K_TR&page=search}{open and publicly available}, including some basic descriptive statistics for many of the variables.
+
+Despite the similarities between the two cases, data remains accessible only upon request. In the future, it would be beneficial to adopt a more open approach to data collection while ensuring the public's trust is maintained. In 2017, a systematic review found only one study discussing how data could be more open: \textit{"this systematic review of the literature has uncovered a lack of evidence-based incentives for researchers to share data, which is ironic in an evidence-based world"}\cite{RowhaniFarid2017} Another similar study of 2020 \cite{Hulsen2020}, highlights the paradox of how open data is widely supported by researchers, publishers, governmental institutions, and is even a necessary condition for asking for funding; and yet the sharing of the data is heavily restricted due to publication pressure and fear for competition.
+
+%Some recommendations, purely speculative, on how to convince the general public to give more 
+
+
+%Offering incentives for individuals to contribute their data, such as access to personalized health recommendations or participation in clinical trials.
+
+%Establishing partnerships with patient advocacy groups and other organizations to build trust and promote the benefits of open data sharing.
+
+%Providing opportunities for individuals to opt-out of data sharing if they choose to do so, while still allowing them to benefit from the services provided by the open data repository.
+
+
+
+
+
+
+%Collaboration is an important aspect of scientific research and we need to strive to make it easier for everyone involved without endangering patient privacy. Our code and data are not hidden but rather protected by an intimidating wall of requests and bureaucracy. However, as long as proper data cleaning is performed, all sensitive data is guaranteed to be protected, and we should not fear sharing curated data more easily. This aspect should be brought forward to legislators and ease restrictions on the data that are at the moment too draconian for proper sharing and use.
+
+
+
+
+%%%%%%%%%
+
+%Once again, due to privacy concerns, especially due to identifiable individual data points, we are not showing the original answers or the final codes. However, we would like to bring forward concerns about how parents wrote identifiable personal information in this section. For example, one wrote something similar to this text: \textit{"Rafael Adolfo has the human immune depressive disorder (not sure how it is written)"}. In this case, the name of the student bypasses the previously applied censorship to identifiable information. Another example would be how several wrote the exact date of a surgical procedure which can be used to track the full person's ID from hospital records or school assistance records. 
+
+%Finally, 12 instances of diseases described in "Other" do not have enough information, or do not have a clear diagnosis. These are the diseases that are deleted from the data.
+
+
+
+%In this aspect, it is certainly worth raising this issue with the patients to check how far they are willing to extend their generosity, and to legislators to see how else can be done to protect unethical use of publicly available medical data.
+
+
+\section{Challenges in framework developing}
+
+We have successfully developed a framework that automatizes most of the tedious scripting aspects. However, we found that R was quite limited in comparison with other programming languages \cite{Burns2012-tj}. As such, we are putting our effort into developing this framework into other languages in the future which would be less complicated than trying to keep updating and maintaining our current packages.
+
+When it comes to performance, large-scaling computing is not an option in R, especially since R does not have built-in support for multithreading. While techniques such as the use of RCPP library \cite{Eddelbuettel2013} can integrate C++ into R, is just an unnecessary middleman. On top of this, R and the de-facto \gls{ide} RStudio, have limited memory management capabilities, which can lead to memory leaks and slow down the performance of R scripts even further. 
+
+While performance is a deal breaker in the long run, this does not affect our data too much since we barely have about 1000x1000 tabular matrices which is not much. However, what pushes us to abandon further support for the future is the lack of proper object-oriented programming and lack of standardization. R does not have strong support for object-oriented programming. R aimed to retain the core functionalities and syntax of S while adding modern features and extending its capabilities. However, S was designed as a language for data analysis and a graphical representation \cite{Chambers2004-sc}, primarily used for statistical modeling and visualization which back in the 1970s did not have in mind the very strong paradigms of object-oriented programming that C++ would properly develop years later during the 1980s. As a result, R was developed in the 1990s, trying to use the 1970s syntax, but somewhat trying to appeal to modern functionality. Even though R does not have to deal with pointers, and memory management like in C++, R has a steeper learning curve than Python or C++ in the long run due to its lack of core personality. Making Python a much better option for beginners a C++ a better option for software professionals. In both cases, all the statistical-related functionality that R specializes in is also available in both of these languages.
+
+From our own experience, R sometimes might appear difficult to work for people who know other programming languages like computer science professionals, but loved by people who are used to working with SPSS or Stata. We tried to satisfy this last group, but now the limitations have become clear, and we should be pushing scripting and programming to be done in Python or C/C++ as in both cases, in the long run, will produce better scripts and final products with much less hassle.
+
+\section{Future projects}
+
+Several small-molecule inhibitors and monoclonal antibodies against \gls{fnbpa} \cite{Gries2020, Provenza2010} are being tested in intrahospital environments \cite{Zimmerli2014}. All the social influence techniques we have discussed and presented so far, especially those related to \gls{staph} hospital-acquired infections \cite{Denis2017, Solberg2000}, can be applied to study nosocomial infections related to \gls{staph} to show the effectiveness of preventing transmission using these inhibitors.
+
+\gls{spm} is highly associated with a fish-rich diet. Friends tend to have similar diets, so the similar good inflammatory process might be due to sharing similar pro-inflammatory or anti-inflammatory diets. As discussed in \colorbox{PaperColor}{\textcolor{black}{Paper B}}, we need to refine the dietary data in FF or use another dataset, before we try this approach.
+
+A forthcoming manuscript uses lessons learned in this thesis regarding \gls{ff} for future epidemiological studies. This is of high interest because future epidemiological studies need to optimize the organization of the data better to minimize the work described in section \ref{datacleaningSection}, which is currently repeated over and over by different researchers. Other practices while analyzing the data need to be revised as well.
+
+We had very limited access to the FF2 dataset, which did not include the social network. We also did not get any data from FF3. There are plenty of studies that can be done using longitudinal data between FF1, FF2, and FF3. For example, on the topic of how is health affected at a later age by a person's social network as the year progresses?; how does \gls{staph} colonization evolve as the social network changes? , does inflammation markers change when we get new friends? does over-the-counter misuse get better or worse over time?
+
+
+% \subsection{General projects}
+
+%Despite having developed a fully functional disease simulator, it hasn't been used for any topic. It would be interesting to test the simulation model against real case models and compare performance. Furthermore, the simulator can be improved with the evolution of the network over time, so it can also infer friendships being broken or new ones forming and by extension diseases evolving.
+
+% A forthcoming manuscript uses lessons learned in this thesis regarding \gls{ff} for future epidemiological studies. This is of high interest because future epidemiological studies need to optimize the organization of the data better to minimize the work described in section \ref{datacleaningSection}, which is currently repeated over and over by different researchers. Other practices while analyzing the data need to be revised as well.
+
+%In another paper currently on hold, we tried comparisons with other Arctic populations. Unfortunately, our plans to include data from our collaborators in Arkhangelsk (Russian Federation) had to be abandoned due to the conflict in Ukraine.
+
+% We expended effort on automatic analysis using ontologies and on producing web-based reports of this automated analysis. Unfortunately, due to limitations in R, these efforts have been temporarily put on hold until the code has been ported into Python or C++.
+
+% There are many social dynamics of high schools that haven't been analyzed and offer several research opportunities. Within the context of social studies, this data can be utilized by the humanities faculty, but the social network data from FF is underutilized within the \gls{uit}.
+
+%\subsection{Pathogen related}
+
+%Several small-molecule inhibitors and monoclonal antibodies against \gls{fnbpa} are being tested in intrahospital environments. The same social influence studies can be applied again in hospitals using these techniques in order to prove that they actually decrease intrahospital infections.
+
+%\textit{S. aureus} social transmission among animals hasn't been studied. It would interesting to see the animal interaction behavior that promotes transmission; especially within the topic of antibiotic abuse in cattle. You can't ask cows about their social network of friends, but you can equip them with GPS to track movement and distances automatically, which is what has been done similarly in intrahospital settings to track transmission between humans and rooms \cite{Obadia2015}.
+
+%As an antibiotic resistance strain surfaces such as LZR Staphylococcus, is important to measure the most common transmission factors, which may include social transmission. Of course, any other pathogen can also be of interest.
+
+%We saw that the \textit{S. aureus} is composed of many virulent factors such as enzymes, toxins, and cell structure. Each of these components contributes more or less to transmission. An interesting approach would be to compare this transmission with other similar bacteria, that for example lack TSST-1. This way we can estimate the transmission and virulence of this toxin by itself. This is repeated with all the \textit{S. aureus} components. Then we can show if any new virus or bacteria can then be quickly assessed by the summation of its components or if the combination of those acts synergetically.
+
+%As vaccines for \textit{S. aureus} are developed, we can also measure herd immunity in society using social influence methods to test if this objective is properly achieved.
+
+%\subsection{Inflammation}
+
+%We already have results that link different diseases and medication usage with inflammation levels, but so far no clinicians have had the time to comment on them.
+
+%Several studies link biomarker levels with obesity. To name a few, ADA has been linked in mouse models with lower obesity and insulin resistance \cite{Cui2021}. Axin-1 is correlated with glucose uptake in skeletal muscle \cite{Yue2020}. BNGF has been linked with BMI and obesity regulation in a Scandinavian population \cite{Thorleifsson2008}. Obesity-driven chemokine has been studied for CCL2, CCL13, CCL18-19, CCL23, CCL26, CXCL1, CXCL3 and CXCL14 \cite{Ignacio2016}. Patients in the obesity group had higher IL-1beta, IL-1RA, IL-2, IL-4, IL-5, IL-6, IL-8, IL-9, IL-10, IL-15, IL-17A, MCP-1/CCL2, MIP-1alpha/CCL3, MIP-1beta/CCL4, G-CSF, GM-CSF, FGF, IFN-gamma, and TNF-alpha than control group \cite{vanderZalm2020}. Our first approach was to study obesity spread and inflammation together, but at this moment, the results are separated in obesity spread (Result I) and biomarkers spread (Result II), with no link between the two. Regardless of this, the results linking both are ready but we had to chance to discuss the results with experts in the field.
+
+%There's a link between anti-inflammation properties and PA due to IL-6 and IL-10. PA is shared among friends. It would be interesting to dive further into how PA is influenced around in the network, and as such if specifically, this enhances levels of myokines and if these levels are shared among friends.
+
+%\gls{spm} is highly associated with a fish-rich diet. Friends tend to have similar diets, so the similar good inflammatory process might be due to sharing similar pro-inflammatory or anti-inflammatory diets. As discussed in Paper B, we need to refine the dietary data in FF or use another dataset, before we try this approach.
+
+%The topic of immunity in itself is a very complex multimodal network of influences between cells, cytokines, and pathogens. It would be interesting to apply network analyzing techniques over a graph representing all of it and check for emerging patterns and influences that might still be unknown.
+
+%\subsection{FF2 and FF3 data}
+
+We have a very limited dataset from FF2, which is unrelated to the social network, and no data from FF3. There are plenty of studies that can be done using longitudinal data; mostly on the topic of how health is affected at a later age by the social network as the year progresses.
+
+%\subsection{Engineering and reliability}
+
+%Outside the scope of this thesis, and in a very different context, I have also explored the possibility of applying other methods to studying how a network of pipes carrying liquids performs depending on the architecture and how to predict failures \cite{Gmiz2023}. Another forthcoming article explores how to predict failures and performance with machine learning methods.
+
