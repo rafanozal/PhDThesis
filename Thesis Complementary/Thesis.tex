@@ -6,18 +6,6 @@
 \documentclass[12pt,twoside,a4paper,fleqn, english]{report}
 
 
-
-%---------------------------------------------------------------------------
-% Specify the levels of the table of contents.
-
-% 0 = Chapters only
-% 1 = Sections only
-% 2 = Sub-sections only
-
-%---------------------------------------------------------------------------
-%\setcounter{tocdepth}{1}
-
-
 %---------------------------------------------------------------------------
 %    All the libraries and includes
 %---------------------------------------------------------------------------
@@ -85,7 +73,6 @@
 % -------------------------------
 %\usepackage{charter}
 
-
 % -------------------------------
 % Define hyphens for words with dashes
 % -------------------------------
@@ -109,14 +96,6 @@
 %---------------------------------------------------------------------------
 \input{symbols}	
 
-
-%---------------------------------------------------------------------------
-% Page header (Please don't change)
-%---------------------------------------------------------------------------
-\setlength{\parindent}{0em}                 % Disables paragraph indentation
-\rhead[\nouppercase{\rightmark}]{\thepage}  % Special headings
-\lhead[\thepage]{\nouppercase{\leftmark}}   % Special headings
-\cfoot{}
 
 \raggedbottom                               % Prevent equal spacing between paragraphs in near-empty pages
 
@@ -154,12 +133,14 @@
 
             % Thesis title
             \vspace{0.15cm}
-            \Large \textbf{Epidemiology Network Analysis}\\
+            \Large \textbf{Epidemiology Network Analysis (II)}\\
 
             % Author and Subtitle
             \vspace{0.05cm}
             \normalsize Rafael Adolfo Nozal Cañadas \par  
-            \normalsize A dissertation for the degree of Philosophiae Doctor  \\ \rightline{\today}
+            \normalsize Complementary mathematical and biological background
+            
+            A dissertation for the degree of Philosophiae Doctor  \\ \rightline{Last Updated: \today}
             
            
             % Big bottom figure
@@ -178,21 +159,14 @@
 \cleardoublepage
 
 
-%--------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------
 % Preamble
 %
-% This part is just for enumerating the first chapters with Roman numbers.
-
-% This includes:
-% (i)   Preface,
-% (iii) Acknowledgements
-% (v)   List of papers
-% (vi)  List of abbreviations
-% (x)   English abstract
-% (xi)  Norwegian abstract
-%--------------------------------------------------------------------------------
+% This part is just for enumerating the beginning with Roman numbers. This
+% includes the Preface, Acknowledgements, ...
+%---------------------------------------------------------------------------
 \pagenumbering{roman} 				% Begin Roman page numbering (i,ii,...)
-
 
 
 
@@ -200,138 +174,35 @@
 % Preface
 %---------------------------------------------------------------------------
 \chapter*{Preface}
-    \addcontentsline{toc}{chapter}{Preface}
+    \addcontentsline{toc}{chapter}{Abstract}
 
-        Social influence has been a notion nesting in human brains since we started living in a community. In the Poetic Edda, the poems of Fáfnismál \cite{ref:SagaBook}\cite{ref:Saga1} and Völuspá \cite{ref:Saga2} describe the existence of beings known as the “Nornir”, who are in charge of weaving the threads of destiny for gods and humans alike. Völuspá describes the Nornir as three individuals: Urðr (“Fate”), Verðandi (“What Is To Come”), and Skuld (“What Needs To Occur”). In Germanic folklore, fate is not fixed nor unique. Because of the influence of others, and because of our own past actions, humans do not have complete freedom to do what they want, but we are not enslaved by divine determinism either. The Nornir are constantly knitting the tapestry of life, in which each person's string is tugging with those of others, always changing and defining who we are or will be.
+        We believe that every individual, regardless of their background knowledge, should have the opportunity to engage with and appreciate the multifaceted and interdisciplinary aspects of this research. The main Ph.D. thesis document takes for granted that the readers are expert knowledge in all interdisciplinary fields which are analyzed throughout the document. This is a challenging assumption given the variety of topics discussed across the documents and the different academic backgrounds of all possible readers. 
 
-        A thousand years later, Jean Jacques Rousseau argues that we surrender our freedom to the "community". Rousseau synthesized the transition from natural freedom to civil liberty with the phrase: \textit{“Freedom consists not so much in doing one’s will as in not being subjected to that of others; it still consists in not submitting the will of others to ours“} \cite{ref:RousseauBook}. Rousseau argued that one must surrender his freedom and act in the best interest of the "general will" because by definition the general will can never be wrong. This "general will" has been used as justification for preserving liberty and to build the foundations for 20th-century totalitarianism enforcing oppression. In contrast, John Locke argued that there are rights undeniable to each individual, and no government, not even the general will, has the right to take them away.
-
-        This begs the question, if other people always influence us and we are vulnerable to others' ideas, is freedom an illusion? In my thesis, I argue that your health is not different and will never be alone. Your social network has been estimated to weigh between 15\% to 40\% \cite{ref:socialinfluence2014} of the relative contributions from health determinants (such as genetics, environment, or medical care) to health outcomes. You are forced to be part of a community and you need to understand the trade-off of your options. People give you the risk of being infected by pathogens, but isolation makes you more likely to have alcohol addiction or suffer from depression. Friends will influence you to skip diets and drinks at the bar, advertisers will constantly push you to consume junk food. Do you eat what you want or do you eat what is enforced upon you? Do you choose your health or is it imposed by others?
-
-        You are locked in the tapestry with other people and they are always influencing your fate, but you are still in charge of it. Being part of a group doesn't excuse you from being responsible for your actions. Being aware of that influence allows you to act with freedom and not necessarily by obeying the will of others. I invite you to read this work and how we measure such influences and their consequences, how to recognize them, and how to avoid them, in the hope that you use this knowledge to preserve the elemental health rights of individuals.
-
-        This thesis is the product of my work at the Department of Computer Science, UiT The Arctic University of Norway, Tromsø, to obtain the Philosophiae Doctor of Science.
+        We understand the importance of making complex concepts accessible to a wider audience, especially to students and parents who collaborated in granting us access to their medical data. This complementary document is specifically designed to bridge the gap between advanced specialized knowledge and a more general understanding of the subject. We hope to ensure that both the general public and university individuals who haven't followed up on the topics since high school can grasp the key ideas and concepts being explored.
+        
+        Throughout this document, we will present key concepts behind bacteria functions with particular detail to \gls{staph}, the immune system, inflammation, vitamin D, and \gls{otc}. As well as to expand a bit more on the different mathematical backgrounds of graph theory and network analysis.
 
         Rafael Adolfo Nozal Cañadas
-        \today
 
     \cleardoublepage
-
-
-%---------------------------------------------------------------------------
-% ENGLISH ABSTRACT (250-ish Words)
-%---------------------------------------------------------------------------
-\chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
-
-\textbf{Research questions:} The primary objective of this doctoral dissertation is an explorative investigation into the social network dynamics within eight high schools, located in Tromsø and Balsfjord (North Norway), and the extent to which these dynamics contribute to the overall health and well-being of the students, such as in the context of infectious disease spread and the transmission of negative or positive health effects, and also in comparison with non-social host factors such as sports or recreational drug frequencies. Secondarily, we aim to develop new analytical methods and provide a framework for enabling agnostic evaluation of social networks in epidemiological studies and faster iterations of developing scripts for general statistical research.
-
-\vspace{0.70\baselineskip} % Increase paragraph spacing manually so this section doesn't end in a weird cut-off paragraph on the second page
-
-\textbf{Methodology:} Using the Fit Futures gathered data on friendship, we used simulations, homophily, $X^2$ tables, logistic regression, and random forests as the main methods to analyze social influence in our topics of interest. We applied classical database normalization and data cleaning to the original data and developed scripts for automatic analysis in R and Python exporting results directly in plain text, Latex, and HTML.
-
-\vspace{0.70\baselineskip}
-
-\textbf{Results:} We found that the social network influences significantly the spread of \gls{staph}. Students close in the network tend to have similar inflammatory biomarkers, \gls{25ohd}, and \gls{bmi} levels. Some high schools tend to consume similar levels of over-the-counter medicines and tend to share the same brand of prescribed medicines. There is also a bias on recreational drug usage by high school.
-
-\vspace{0.70\baselineskip}
-
-\textbf{Conclusions:} Social influence is shown to be significant in every analysis. These findings emphasize the importance of considering social network dynamics in understanding and addressing health and well-being issues among students. Further research and interventions targeting social network influences can contribute to developing more effective health strategies.
-
-
-\vspace{0.70\baselineskip}
-
-\textbf{Originality:} Use of non-parametric simulation and machine learning methods to estimate social influence. We are measuring social influence on \gls{25ohd}, in an inflammatory proteomic assay.
-
-\vspace{0.70\baselineskip}
-
-\textbf{Significance:} Social influence, whether from virtual friends or physical ones, is a growing area of interest in many fields. In Epidemiology in particular we saw a boost in popularity after the Sars-Cov-2 pandemic.
-
-\vspace{0.70\baselineskip}
-
-\textbf{Keywords:} Social Networks, \gls{staph}, statistics, epidemiology, vitamin D, obesity, inflammation, random forests, prescriptions, drugs.
-
-
-    
-%---------------------------------------------------------------------------
-% Acknowledgements
-%---------------------------------------------------------------------------
-\chapter*{Acknowledgements}
-\addcontentsline{toc}{chapter}{Acknowledgements}
-
-    A fair listing of all the positive qualities and contributions of everyone connected to this thesis would render another 200 pages, and would still be the short version of it. Instead, I hope that the people named here would forgive me for describing only one or two of the many good characteristics that helped in this PhD journey.
-
-    First, I want to express my gratitude to \gls{bin} and the UiT The Arctic University of Norway for providing financial support, and \gls{rek} and the Norwegian Data Protection Authority for approval of the data collection (reference: 2018/1975/REK Nord).
- 
-    I would like to express my sincere gratitude to my main supervisor Lars-Ailo Bongo for his invaluable contributions to this project. His writing feedback has been incredibly thorough and detailed, providing me with the guidance and support I needed to refine my work and take it to the next level. In addition, his high level of expertise and knowledge in many fields has been instrumental in shaping the direction and scope of this project. His insights and recommendations have been invaluable, and I feel fortunate to have had the opportunity to work with someone of such exceptional talent and dedication.
-
-    Co-supervisors Anne-Sofie Furberg and Anne Merethe Hanssen have provided valuable insights and expertise in the areas of general medicine and microbiology, which have helped to shape this project, and been a source of moral support throughout this project, providing encouragement and motivation. They have also introduced me to other individuals, listed below, who have later made significant contributions to this project.
-
-    Christopher Nilsen for his invaluable contributions to this doctoral thesis. Christopher played a pivotal role in the conceptualization of Fit Futures. In particular, he also insisted on the inclusion of the social network data that made this PhD research possible. His foresight was critical in shaping the direction of this research and many others as he is persistently securing funding for new projects.
-
-    To my department leader Anders Andersen and his efforts to improve the department's resources thanks to which I had the means to do this PhD.
-
-    Other co-authors in this project are Dina Benedicte Berg Stensen, Mohsen Askar. I would like to express my deep appreciation to them for their invaluable contributions to the scientific articles we have worked on together. Their expertise in the fields of endocrinology and pharmacy has been essential in shaping the direction and scope of our research, and their collaboration has been instrumental in bringing these papers to fruition. Their dedication, hard work, and attention to detail have been truly inspiring, and I feel grateful to have had the opportunity to work with such talented and knowledgeable individuals.
-    
-    Other co-authors in other projects, Rocío Raya Miranda and María Luz Gamiz Perez. I did my first statistical course ever with Rocío and I will be forever grateful for her introducing me to this world. María Luz continued teaching me biostatistics and survival analysis later on in my studies. Hopefully, I have become a productive member of this community and thanks to them I have grown to the point that I could teach them a thing or two and we share co-authorship in several articles.
-
-    Other collaborators Rocío Bonillo León, Svendsen Kristian, Lars Småbrekke, Guri Grimmes. I don't have a background in medicine, but thanks to them I gained a deeper understanding of many topics, including nutrition, pharmacology, immunology, endocrinology, and physiology. For me is important to get the best mental image possible of how things work rather than crunching the numbers and hoping that someone else deals with the results.
-
-    All other group coworkers for their continuous feedback, encouragement, and dedication to showing me and others how to push the boundaries of knowledge. Also, to the cleaning crew in the UiT, for their tireless efforts, their hard work and dedication often go unnoticed, but their contributions are invaluable to the smooth operation of the university. Without their daily efforts, the university would not be able to function effectively. And finally to the personnel in charge of making food in the cafeteria. Their commitment to providing nutritious and delicious meals to the university community is greatly appreciated and kept me running many endless days in the office.
-
-    All their valuable wisdom and efforts encourage me and others to reach our full potential.
-
-\cleardoublepage
-
-
-%---------------------------------------------------------------------------
-% LIST OF PAPERS
-%---------------------------------------------------------------------------
-\input{chapters/ChapterPAPERS}
 
 %---------------------------------------------------------------------------
 % LIST OF ABBREVIATIONS
 %
 % These are displayed in alphabetical order
 %---------------------------------------------------------------------------
-%\chapter*{List of abbreviations}
+% \chapter*{List of abbreviations}
 \addcontentsline{toc}{chapter}{List of abbreviations}
 
-\glsnogroupskiptrue  % Don't skip the line between abbreviations group
 \printglossary[type=\acronymtype,title=Abbreviations]
-
-
-
-
 
 %---------------------------------------------------------------------------
 % TABLE OF CONTENT
 %
 % This is generated automatically, you don't need to write anything
 %---------------------------------------------------------------------------
-\setcounter{tocdepth}{1}            % Sets the number of section levels in the table of contents to 1
-                                    % 0 = Chapters only
-                                    % 1 = Sections only
-                                    % 2 = Sub-sections only
-                                    
+\setcounter{tocdepth}{4}            % Sets the number of section levels in the table of contents to 4
 \tableofcontents                    % Creates the table of contents
-
-\glsunsetall                        % Avoid symbols to be triggered in the list of figures / tables but rather in the body of the text later
-
-
-\cleardoublepage
-% \phantom section so the "List of Figures" appears in the list of contents
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
-
-
-\cleardoublepage
-% \phantom section so the "List of Tables" appears in the list of contents
-\addcontentsline{toc}{chapter}{List of Tables}
-\listoftables
-
-\glsresetall
-
 \cleardoublepage                    % Ends the current page
 
 
@@ -343,68 +214,28 @@
 \setlength{\parindent}{20pt}        % Sets default paragraph indentation to 20 pt 
 
 % Introduction to networks
-\input{chapters/ChapterINTRO}
+\input{chapters/ChapterNETWORK}
 
-% Aims of the thesis
-\input{chapters/ChapterAIMS}
+% Introduction to Staph
+\input{chapters/ChapterSTAPH}
 
-% Introduction to Staph and others
-\input{chapters/ChapterBACKGROUND}
+% Introduction to Immunology and Inflammation (not ready for review)
+\input{chapters/ChapterINFLAMMATION}
 
-% Materials and methods
-\input{chapters/ChapterMETHODOLOGY}
+% Introduction to Vitamin D
+\input{chapters/ChapterVITAMIND}
 
-% Results
-\input{chapters/ChapterSUMMARYPAPERS}
-
-
-% Discussion
-\input{chapters/ChapterDISCUSSION}
-
-% Main conclusions
-\input{chapters/chapterNEWCONCLUSSION}
-
-%\input{chapters/ChapterCONCLUSSION}
-
+% Introduction to the OTC basics
+\input{chapters/ChapterOTC}
 
 %---------------------------------------------------------------------------
 % References and Bibliography
 % 
 % Add them manually to the references.bib file
 %---------------------------------------------------------------------------
-
-\phantomsection
-
-\addcontentsline{toc}{chapter}{Bibliography}
-
-%\bibliographystyle{unsrt}  % applies an unsorted citation style for the references
-
-\bibliographystyle{IEEEtran}
-
-% Sorting bibliography in different files didn't work ;(
-
+\bibliographystyle{unsrt}                                     % applies an unsorted citation style for the references
 %\bibliography{references.bib,./Bibliography/BIBmethod.bib,./Bibliography/BIBinflammation.bib,./Bibliography/BIBvitaminD.bib,./Bibliography/BIBnetwork.bib}   % loads the references from the bibliography files and creates the Bibliography section   
 
 \bibliography{references.bib}
-
-
-%---------------------------------------------------------------------------
-% Appendix
-%
-% Append appendices here (there are none? maybe the web questionaries?)
-%---------------------------------------------------------------------------
-\label{ch:Annex}
-
-\appendix                           % Tells Latex that the upcoming chapters should be put in the Appendix
-
-% Published papers
-\input{chapters/ChapterAnnexPapers}
-
-% Extra results
-\input{chapters/ChapterRESULTS}
-
-% Database schema and tables
-%\input{chapters/appendix.tex}       % Imports the contents from appendix.txt file 
-
 
 \end{document}

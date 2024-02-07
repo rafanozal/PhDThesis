@@ -9,7 +9,7 @@
     \begin{figure}[H]
         \centering
             \includegraphics[width=0.9\linewidth]{figures/Networks/kroni2.png} 
-        \caption{Königsberg according to an engraving by Joachim Bering from 1613, source \url{https://upload.wikimedia.org/wikipedia/commons/1/15/Koenigsberg\%2C\_Map\_by\_Bering\_1613.jpg}. Blue tones for the river Pregel, and orange tones for the bridges have been added for better visualization. The original names in the legend have also been added for context.}
+        \caption{Königsberg according to an engraving by Joachim Bering from 1613 \cite{ref:konisMap}. Blue tones for the river Pregel and orange tones for the bridges have been added for better visualization. The original names in the legend have also been added for context.}
         \label{figure:networkBridges}
     \end{figure}
 
@@ -30,14 +30,9 @@ Nevertheless, Euler proved that the problem had no solution, and by doing so he 
 
 \subsection{Introduction}
 
-Graph theory is a branch of mathematics that studies the properties and applications of graphs. A graph is a mathematical structure consisting of a set of vertices (also referred to as nodes) and a set of edges of these vertices. It is a fascinating subject with numerous practical applications in several fields including physical network connections in computer science, optimizing logistics in transportation, or in our case measuring the influence of peers in social networks.
+Graph theory is a branch of mathematics that studies the properties and applications of graphs. A graph is a mathematical structure consisting of a set of vertices (also referred to as nodes) and a set of edges of these vertices. It is a fascinating subject with numerous practical applications in several fields including physical network connections in computer science, optimizing logistics in transportation, or our case measuring the influence of peers in social networks.
 
-    \begin{figure}[H]
-        \centering
-            \includegraphics[width=0.7\linewidth]{figures/Networks/papersSocial.png} 
-        \caption{Proportion of papers published about networks on the topic of health across the years, in comparison with the number of papers published on obesity. Reproduced from \url{https://www.sciencedirect.com/referencework/9780080970875/international-encyclopedia-of-the-social-and-behavioral-sciences}}
-        \label{figure:networkNetworkRise}
-    \end{figure}
+\clearpage
 
 Graphs provide an abstract representation of the relationships between objects, which may be used to find paths, network flow, connectivity, and more which we will discuss later on. In this context, we are going to talk about graphs and networks interchangeably. 
 
@@ -53,13 +48,24 @@ A node or vertex is the fundamental element of a network. Is usually represented
 
 Mathematically, we notate all nodes as V, with each individual node in a graph with lowercase variables, such as x, y, or z. The total number of nodes is notated with $|V|$. In figure \ref{figure:networkExampleBasic}, we have 10 nodes.
 
+    \begin{figure}[ht]
+        \centering
+            \includegraphics[width=0.7\linewidth]{figures/Networks/Concepts/directed.png} 
+        \caption{An example of a network with 10 nodes labeled from A to J. Each node has a color attribute that can be either red or blue. Nodes are connected via directed relationships. Nodes B and C, and nodes G and F have a reciprocal relationship. The Laplacian representation of this matrix can be seen in table \ref{table:networkLaplacian}}
+        \label{figure:networkExampleBasic}
+    \end{figure}
+
+
+
+\clearpage
+
 \subsubsection{Attributes}
 
 Each node may have different variables, such as sex, BMI, or any other intrinsic variable proper to the object the node is representing. Each of these variables is known as the attributes of a node. Each attribute of a node is notated with subindexes, such as $x_1$, $x_2$, ... , $x_i$ , ... , $x_n$ . In figure \ref{figure:networkExampleBasic}, $A_{color} = blue$
 
 \subsection{Edges}
 
-An edge represents a relationship between two nodes. Our network represents a relationship of undirected friendship. The assessment of the edges is formally introduced in detail in section \cite{method:SocialNetwork}. For now, let's just comment that we have 5 types of relationships that represent the social interactions that happen between students. One is physical relationships, relationships at school, at home, at sports practice, and finally by other types of interaction. If we combine all possible edges, then we form a 6th network which we call the overall network.
+An edge represents a relationship between two nodes. Our network represents a relationship of undirected friendship. The assessment of the edges is formally introduced in the thesis's main document. For now, let's just comment that we have 5 types of relationships that represent the social interactions that happen between students. One is physical relationships, relationships at school, at home, at sports practice, and finally by other types of interaction. If we combine all possible edges, then we form a 6th network which we call the overall network.
 
 Two nodes can have multiple edges with the same or different weights between them, or have none. If all edges in the graph have at least one connection to every other node, then is called a complete graph.
 
@@ -75,14 +81,15 @@ Directionality refers to whether the edges are directed or undirected. In the ca
 
 In our network, edges are undirected, meaning that it doesn't matter which student nominates whom as a friend, in either case, there is a relationship between them.
 
-    \begin{figure}[H]
+    \begin{figure}[ht]
         \centering
-            \includegraphics[width=0.7\linewidth]{figures/Networks/Concepts/directed.png} 
-        \caption{An example of a network with 10 nodes labeled from A to J. Each node has a color attribute that can be either red or blue. Nodes are connected via directed relationships. Nodes B and C, and nodes G and F have a reciprocal relationship. The Laplacian representation of this matrix can be seen in table \ref{table:networkLaplacian}}
-        \label{figure:networkExampleBasic}
+            \includegraphics[width=0.7\linewidth]{figures/Networks/Concepts/edgesValues.png} 
+        \caption{An example of a network with 10 nodes and weighted undirected relationships. A spring layout of this network can be seen in figure \ref{figure:networkExampleSpring}}
+        \label{figure:networkExampleWeights}
     \end{figure}
 
-    \begin{figure}[h!]
+
+    \begin{figure}[ht]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Histograms/Histogram_completeTable_OverallConnections.png} 
         \caption{A histogram with the total of undirected friends per student in the overall network. Some students are popular with up to 12 connections, while others are isolated with 0 connections.}
@@ -91,18 +98,13 @@ In our network, edges are undirected, meaning that it doesn't matter which stude
 
 \subsubsection{Reciprocity ratio}
 
-The reciprocity ratio is the number of edges that has a reciprocal relationship. This can only be measured in networks that are directed.
+The reciprocity ratio is the number of edges that have a reciprocal relationship. This can only be measured in networks that are directed.
 
 \subsubsection{Weight}
 
 All edges have an additional property called weight. This is a variable, typically a real number, that indicates some quantifying property of the relationship. For example the distance between two cities, or how many hours per day you spend in the company of a person. By default, all edges have a weight of 1, meaning all relationships have the same importance; this is our case study.
 
-    \begin{figure}[h!]
-        \centering
-            \includegraphics[width=0.7\linewidth]{figures/Networks/Concepts/edgesValues.png} 
-        \caption{An example of a network with 10 nodes and weighted undirected relationships. A spring layout of this network can be seen in figure \ref{figure:networkExampleSpring}}
-        \label{figure:networkExampleWeights}
-    \end{figure}
+
 
 Nodes that are not connected can be defined to either have a weight of zero or a weight of infinity, depending on the wording of your definition.
 
@@ -208,7 +210,7 @@ Two graphs are said to be isomorphic if they have the same edges and nodes if we
 
 A set of two nodes is called a diad. A set of three nodes is called a triad. A set of four nodes is called a tetrad. An undirected diad can have only two states, either the two nodes share an edge, or they don't. A directed diad can have 4 states: no common edge, the edge from A to B, the edge from B to A, reciprocal edges from A to B, and B to A. Similarly, triads and tetrads have a limited amount of combinations of edges and no edges between their nodes. All of these examples are called network motifs.
 
-Networks that have the same context, for example, how animals share spaces in the wilderness, and how followers are distributed in internet social networks, tend to have the same distribution of motifs. Sometimes is useful to compare the motif count with other network motif counts to check if their structure is similar. Other time is interesting to simulate a network by giving a set of probabilities for each network motif to force a specific structure.
+Networks that have the same context, for example, how animals share spaces in the wilderness, and how followers are distributed in internet social networks, tend to have the same distribution of motifs. Sometimes is useful to compare the motif count with other network motif counts to check if their structure is similar. Other times is interesting to simulate a network by giving a set of probabilities for each network motif to force a specific structure.
 
 Network motifs are an important concept in social science studies to describe the structure of the network \cite{Faust2010}, but there are better metrics on how to describe a network \cite{Faust2007}.
 
@@ -222,17 +224,17 @@ Community detection is the process of discovering groups or clusters of nodes in
 
 \begin{itemize}
 
-    \item \textbf{Modularity:} This method compares the density of different groups and is useful to compare hierarchical and overlapping communities.
+    \item \textbf{Modularity:} This method compares the density of different groups and is useful for comparing hierarchical and overlapping communities.
     
     \item \textbf{Clustering:} This is a family of algorithms that consists of dividing groups with similar attributes. Different approaches are k-means, hierarchical clustering, or spectral clustering
     
-    \item \textbf{Link-based:} This method uses the edges in the graph and measures how far you can walk from one node to another one. Communities tend to have shorter walking distances between them.
+    \item \textbf{Link-based:} This method uses the edges in the graph and measures how far you can walk from one node to another. Communities tend to have shorter walking distances between them.
 
-    \item \textbf{Latent variable:} These methods are somewhat similar to PCA analysis, in which we decided a number of hidden latent variables, and the algorithm groups automatically nodes based on those latent variables.
+    \item \textbf{Latent variable:} These methods are somewhat similar to PCA analysis, in which we decide on several hidden latent variables, and the algorithm groups automatically nodes based on those latent variables.
 
 \end{itemize}
 
-In our case, we already have the data divided in communities by high schools, down to the same class levels. And we have several attributes in each node to compare different values. As we have not done any study regarding the intricacies of each high school individually, no clustering has been applied so far other than calculating homophilies (section \ref{network:homophily}).
+In our case, we already have the data divided in communities by high schools, down to the same class levels. We have several attributes in each node to compare different values. As we have not done any study regarding the intricacies of each high school individually, no clustering has been applied so far other than calculating homophily (section \ref{network:homophily}).
 
 % https://towardsdatascience.com/an-introduction-to-graph-partitioning-algorithms-and-community-detection-29e7c962d10e?gi=ab4d5c83b911
 
@@ -254,7 +256,7 @@ The network can be multimodal. This means that a node can connect to other nodes
 
 \section{Layout}
 
-So far we can define a network as a table of nodes with attributes, and another table of edges and weights. Mathematically this is all we need. But for visualization purposes, there are several possibilities as to how we can spread the nodes in a typically 2D or 3D image. Proper node placement can help in creating a clear and intuitive picture making it easier to understand the relationships between the nodes. On the other hand, the emerging pattern in the network can be hidden if a poor option is chosen. This is called network layout. There are several algorithms for vertex placement. The basic categories are:
+So far we can define a network as a table of nodes with attributes, and another table of edges and weights. Mathematically this is all we need. But for visualization purposes, there are several possibilities as to how we can spread the nodes in a typically 2D or 3D image.
 
     \begin{figure}[H]
         \centering
@@ -263,24 +265,31 @@ So far we can define a network as a table of nodes with attributes, and another 
         \label{figure:networkExampleLayout}
     \end{figure}
 
+
+Proper node placement can help in creating a clear and intuitive picture making it easier to understand the relationships between the nodes. On the other hand, the emerging pattern in the network can be hidden if a poor option is chosen. This is called network layout. There are several algorithms for vertex placement. The basic categories are:
+
+
+
+\clearpage
+
 \subsection{Random}
 
 Random placement of the nodes. Just spread the nodes around in no particular order and hope for the best.
 
-    \begin{figure}[H]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Layouts/Graph_OverallNetwork_with_no_highlight_grid_HighSchool___grid.png} 
         \caption{Overall network placing the nodes randomly in a 2D grid. This is useful when the amount of connections is very low, but otherwise useless for visualizing patterns in this network.}
         \label{figure:networksLayoutsGRID}
     \end{figure}
 
-\newpage
-
 \subsection{Force directed}
 
 This uses physics-based simulations to determine the position of nodes based on the attractive and repulsive forces between them. For example, we can imagine the nodes as electrical charges based on node properties, or the edges as springs with an elastic force proportional to the edge value.
 
-    \begin{figure}[h!]
+\clearpage
+
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Concepts/edgesSpring.png} 
         \caption{An example of a network with 10 nodes and weighted undirected relationships with a spring layout. Nodes with smaller weights are brought closer together in the 2D space as if the edges were acting as springs with greater or lower spring force equilibrium alike to Hooke’s law.}
@@ -291,14 +300,12 @@ This uses physics-based simulations to determine the position of nodes based on 
 
 Hierarchical layouts tend to put important nodes on top, and less important nodes on the bottom. This type of layout only makes sense when you actually have a hierarchical relationship. Common in multi-modal networks, or where there are many triads with only two nodes connecting. Hierarchy would also mean that nodes' placement in the y-axis has some meaning of importance.
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.5\linewidth]{figures/Networks/Layouts/hirearchy.png} 
         \caption{Our recurrent example of a network layout in a hierarchical pattern. In this example is highlighted that D is a very important node in the network, and is placed on top.}
         \label{figure:networkExampleHierarchy}
     \end{figure}
-
-\newpage
 
 \subsection{Spectral}
 
@@ -306,64 +313,64 @@ A way that minimizes a particular energy function derived from the graph's Lapla
 
 \subsubsection{DRL}
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Layouts/Graph_OverallNetwork_with_no_highlight_drl_HighSchool___drl.png} 
         \caption{Overall network with a \gls{drl} algorithm  \cite{osti_1145621} . The layout produced by a DRL is hierarchical in nature and is well-suited for presenting large-scale graphs with a clear structure. In our case, it clusters high schools somewhat together but is not the best choice for our network.}
         \label{figure:networksLayoutsDRL}
     \end{figure}
 
-    \newpage
+\clearpage
 
 \subsubsection{Fruchterman - Reingold}
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Layouts/Graph_OverallNetwork_with_no_highlight_fr_HighSchool___fr.png} 
         \caption{Overall network with a Fruchterman - Reingold algorithm \cite{Fruchterman1991}, it keeps related vertices together. In our case, we have some isolated nodes that are too far away, while the network is clumped in one little space. Also not good.}
         \label{figure:networksLayoutsFR}
     \end{figure}
 
-    \newpage
+\clearpage
 
 \subsubsection{Graphopt}
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Layouts/Graph_OverallNetwork_with_no_highlight_graphopt_HighSchool___graphopt.png} 
         \caption{Overall network with a graphopt layout \cite{gabor2023}. Graphopt (graph optimization) uses physical analogies for defining attracting and repelling forces among the vertices and then the physical system is simulated until it reaches an equilibrium. It aimed to minimize the number of edge crossings to avoid visual cluttering, but in our case, we have too many edges everywhere and an emerging pattern is not clear.}
         \label{figure:networksLayoutsGRAPHOPT}
     \end{figure}
 
-    \newpage
+\clearpage
 
 \subsubsection{Kamada-Kawai}
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Layouts/Graph_OverallNetwork_with_no_highlight_kk_HighSchool___kk.png} 
-        \caption{Overall network with a Kamada-Kawai algorithm \cite{Kamada1989}. It put emphasis on the distance as information. Here we see that more isolated nodes are on the outside, and more dense connected areas in the middle. Very useful in other contexts, but again not an ideal choice for us as the core of the network is just a mess of black lines.}
+        \caption{Overall network with a Kamada-Kawai algorithm \cite{Kamada1989}. It emphasized the distance as information. Here we see that more isolated nodes are on the outside, and more dense connected areas in the middle. Very useful in other contexts, but again not an ideal choice for us as the core of the network is just a mess of black lines.}
         \label{figure:networksLayoutsKK}
     \end{figure}    
 
-    \newpage
+\clearpage
 
 \subsubsection{MDS}
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Layouts/Graph_OverallNetwork_with_no_highlight_mds_HighSchool___mds.png} 
-        \caption{Overall network with \gls{mds} \cite{Buja2008}. When the dissimilarities are distances between high-dimensional objects, MDS acts as a dimension reduction technique. When the dissimilarities are the shortest-path distances in a graph, MDS acts as a graph layout technique. This is our preferred default method because it balances clusters groups of friends together which have some common attributes}
+        \caption{Overall network with \gls{mds} \cite{Buja2008}. When the dissimilarities are distances between high-dimensional objects, MDS acts as a dimension reduction technique. When the dissimilarities are the shortest path distances in a graph, MDS acts as a graph layout technique. This is our preferred default method because it balances clusters groups of friends together that have some common attributes}
         \label{figure:networksLayoutsMDS}
     \end{figure}    
 
-% MDS Original reference with no DOI http://www.stat.yale.edu/~lc436/papers/JCGS-mds.pdf
+\clearpage
 
-    \newpage
+% MDS Original reference with no DOI http://www.stat.yale.edu/~lc436/papers/JCGS-mds.pdf
 
 \subsubsection{Grouping}
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Layouts/Graph_OverallNetwork_HS_societal_HighSchool___manual.png} 
         \caption{Overall network sorting nodes into circles, where each circle is a high school. Here is hard to see relationships inside high schools since are densely connected, but ok to see the proportion of relationships between every two pairs of high schools.}
@@ -371,6 +378,8 @@ A way that minimizes a particular energy function derived from the graph's Lapla
     \end{figure}        
 
     \newpage
+
+\clearpage
 
 \subsubsection{Geographical}
 
@@ -381,7 +390,8 @@ A way that minimizes a particular energy function derived from the graph's Lapla
         \label{figure:networksLayoutsGEOGRAPHICAL}
     \end{figure}        
 
-    \newpage
+
+\clearpage
 
 \section{Networks metrics}
 
@@ -397,7 +407,7 @@ The most obvious one is to measure the number of connections \cite{Freeman1978}.
 
 \subsubsection{Closeness centrality}
 
-In this context, we measure the importance of the nodes proportionally to their path with any other given node \cite{Freeman1978}. The idea is that an important node is one that is capable of reaching other nodes very quickly. The importance of this is more obvious in topology networks with weighted edges, where a town can be well connected to other towns, but using semi-destroyed and badly maintained roads, making it a less attractive node to put a central hub. In comparison, a town that is less connected but with a newly built 4 lanes highway, might be a better option. When a closeness centrality number is high, it means that the node is central in the network and is close to other nodes in the network. This indicates that the node has better accessibility to other nodes and can easily reach these nodes. An example of this metric can be seen in figure \ref{figure:networksCloseness}.
+In this context, we measure the importance of the nodes proportionally to their path with any other given node \cite{Freeman1978}. The idea is that an important node is capable of reaching other nodes very quickly. The importance of this is more obvious in topology networks with weighted edges, where a town can be well connected to other towns, but using semi-destroyed and badly maintained roads, making it a less attractive node to put a central hub. In comparison, a town that is less connected but with a newly built 4-lane highway might be a better option. When a closeness centrality number is high, it means that the node is central in the network and is close to other nodes in the network. This indicates that the node has better accessibility to other nodes and can easily reach these nodes. An example of this metric can be seen in figure \ref{figure:networksCloseness}.
 
     \begin{figure}[h!]
         \centering
@@ -408,7 +418,7 @@ In this context, we measure the importance of the nodes proportionally to their 
 
 \subsubsection{Betweenness centrality}
 
-Central nodes are nodes that connect several subnetworks together \cite{Freeman1978}. In epidemiology identifying these nodes are critical because we can stop the progress of the disease by targeting these nodes alone, and thus isolating each of the individual clusters. An example of this metric can be seen in figure \ref{figure:networksBetweenness}.
+Central nodes are nodes that connect several subnetworks \cite{Freeman1978}. In epidemiology identifying these nodes is critical because we can stop the progress of the disease by targeting these nodes alone, and thus isolating each of the individual clusters. An example of this metric can be seen in figure \ref{figure:networksBetweenness}.
 
     \begin{figure}[h!]
         \centering
@@ -419,9 +429,9 @@ Central nodes are nodes that connect several subnetworks together \cite{Freeman1
 
 \subsubsection{Eigencentrality}
 
-When you don't care about the number of connections, but about the quality of the connections, then eigencentrality is what is used to measure the important nodes \cite{Bonacich1972}. In general, vertices with high eigenvector centralities are those which are connected to many other vertices which are, in turn, connected to many others, and so on. An example of this metric can be seen in figure \ref{figure:networksEigen}.
+When you don't care about the number of connections, but about the quality of the connections, then eigencentrality is what is used to measure the important nodes \cite{Bonacich1972}. In general, vertices with high eigenvector centralities are those that are connected to many other vertices which are, in turn, connected to many others, and so on. An example of this metric can be seen in figure \ref{figure:networksEigen}.
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.9\linewidth]{figures/Networks/Centralities/Graph_overallEdgesDF_centralitiesDF_Eigen___mds.png} 
         \caption{Overall network coloring nodes by their eigencentrality. Node size is also proportional to eigencentrality. A few nodes are popular people also connecting to other popular people.}
@@ -436,16 +446,17 @@ Is the same as Eigencentrality, but you get a decay factor the further away you 
 
 Connectivity is the average chosen centrality per node in the network. It gives you an idea of how well the network is interconnected. Higher degree centrality numbers mean that information or diseases travel around much easier. In table \ref{table:networksHS} we can see that connectivity is not constant in the network, for example, some schools display higher connectivity than others, and the same goes for sex dynamics.
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Concepts/edgesConnectivity.png} 
         \caption{A network with two components. Nodes are labeled with the number of degree centrality in each. On the left component, we have an average degree of 1.3, while in the right component, we have an average degree of 1.71}
         \label{figure:networksConnectivity}
     \end{figure}   
 
-\label{figure:networksHS}
-\begin{table}[h!]
+\begin{table}[h]
+    
     \centering
+
     \caption{The average centralities measures for the whole population, each high school, and also men and women. Notice that in H5 we have a higher amount of disconnected triads, which causes outliers in the average value for closeness.}
     \renewcommand{\arraystretch}{1.7}
     \begin{tabular}{rccccc|}
@@ -465,6 +476,9 @@ Connectivity is the average chosen centrality per node in the network. It gives 
     \multicolumn{1}{|r|}{\cellcolor[HTML]{B7FDFA}Men}        & 5.31                                               & 0.0011                                                & 2405                                                & 0.0153                                            & -0.0106                                               \\
     \multicolumn{1}{|r|}{\cellcolor[HTML]{FFBED5}Women}      & 5.37                                               & 0.0017                                                & 2317                                                & 0.0019                                            & -0.0328                                               \\ \hline
     \end{tabular}
+
+    \label{table:networksHS}
+    
 \end{table}
 
 
@@ -472,12 +486,14 @@ Connectivity is the average chosen centrality per node in the network. It gives 
 
 Density is another overview of the number of relationships in a network. Is the amount of total connections divided by the amount of possible connections. Unlike connectivity, this value is bounded between 0 and 1. Density by itself is not an exciting metric and needs to be compared with another density to get some useful information. For example, we can compare the friendship density of the high schools in Northern Norway, with the density in Southern Norway to see if there is a significant difference. We can do the same for nodes inside a network, such as comparing the friendship density of men against the friendship density of women.
 
-    \begin{figure}[h!]
+    \begin{figure}[h]
         \centering
             \includegraphics[width=0.7\linewidth]{figures/Networks/Concepts/edgesDensity.png} 
-        \caption{A network with two components. Black edges thick represent existing edges, and red thin and dashed edges represent possible edges. On the left component, the 3 possible edges are shown and labeled. On the right component, no edge is labeled. The left component has a density of 2/3 (66\%), while the right component has a density of 6/49 (12\%). Notice that the right component, despise having higher average connectivity, also has a lower density.}
+        \caption{A network with two components. Black edges represent existing edges, and red thin, and dashed edges represent possible edges. On the left component, the 3 possible edges are shown and labeled. On the right component, no edge is labeled. The left component has a density of 2/3 (66\%), while the right component has a density of 6/49 (12\%). Notice that the right component, despite having higher average connectivity, also has a lower density.}
         \label{figure:networksDensity}
     \end{figure}    
+
+\clearpage
 
 
 \subsection{Homophily}
@@ -520,7 +536,7 @@ The calculated binomial test is:
     \begin{equation*}
          \dbinom{6}{2} \cdot 0.6^2 \cdot (1-0.6)^{6-2} = 0.14
     \end{equation*}
-The probability $Homophily_{color = red} = 0.286$ is greater than we would expect by chance (0.14), however, is not greater by much. The p-value for a two-sided test is 0.23 indicating that we can't really tell if the reds are biased in this graph.
+The probability $Homophily_{color = red} = 0.286$ is greater than we would expect by chance (0.14), however, is not greater by much. The p-value for a two-sided test is 0.23 indicating that we can't tell if the reds are biased in this graph.
 
 \subsection{Average path length}
 
@@ -543,6 +559,8 @@ Coverage of a node refers to how many nodes you can reach from that particular n
         \caption{An example of coverage. For a given path of distance equal to 3, node A can reach all the green highlighted nodes using the red highlighted paths.}
         \label{figure:networkCoverage}
     \end{figure}
+
+\clearpage
 
 \subsection{Reachability}
 
@@ -586,9 +604,10 @@ We can apply the same method to our network, to which we made a simulation engin
 For this example, we generated an unknown novel disease that has a 30\% chance of transmission from person to person, as long as they are connected in the overall network. People can get immunized at any time and have a 10\% chance of doing so, but they can also die at any time and have a 1\% of so. We study six cases with 200 simulations each, one in which the disease follows its natural order, and the other five applying a vaccine to the population at step 10, with the restriction that we only have 30 vaccines per step.  The vaccine is administered to people that we know that have never shown signs of infection, don't currently have the disease, didn't have the disease in the past, and are not dead. The vaccine is 100\% effective and has no side effects. In the first vaccine case, we give the vaccine at random, the second case we give the vaccine first to people with a higher degree of centrality (most friends), third case higher closeness (shorter distance to rest of nodes), fourth case higher betweenness (connecting subnetworks), and fifth case higher eigencentrality (important people). The results for this simulation can be found in table \ref{table:networkSimulations} 
 
 \begin{table}[H]
+    
     \centering
-    \label{table:networkSimulations}
-    \caption{Comparison between the different simulation results. The first two cases can be seen in figure \ref{figure:simulationsA} , and figure \ref{figure:simulationsB}. Death rate and immunity rate is calculated at the final step of the simulation. Peak infection is calculated with respect the maximum infection coverage in each simulation, and in which step did happen.}
+    
+    \caption{Comparison between the different simulation results. The first two cases can be seen in figure \ref{figure:simulationsA}, and figure \ref{figure:simulationsB}. Death rate and immunity rate are calculated at the final step of the simulation. Peak infection is calculated with respect to the maximum infection coverage in each simulation, and in which step did happen.}
     \renewcommand{\arraystretch}{1.7}
     \scalebox{0.7}{
     \begin{tabular}{rc|ccccc|}
@@ -607,24 +626,27 @@ For this example, we generated an unknown novel disease that has a 30\% chance o
     \multicolumn{1}{|r|}{\cellcolor[HTML]{FFCCC9}at step}             & 23.20 ± 10.65                      & 19.15 ± 7.67                   & 17.47 ± 6.00                   & 17.21 ± 8.70                         & 15.86 ± 6.97                          & 19.35 ± 9.05                    \\ \hline
     \end{tabular}
     }
+
+    \label{table:networkSimulations}
+    
 \end{table}
 
-In the first case (figure \ref{figure:simulationsA}) if we are lucky, the disease will start in an isolated node, however, the overall immunity will be very low with the subsequence risk of the disease restarting again in a more connected node. We can also see that both the peak infection and death rates are quite high, with about 66 students dying on average.
+In the first case (figure \ref{figure:simulationsA}) if we are lucky, the disease will start in an isolated node, however, the overall immunity will be very low with the subsequent risk of the disease restarting again in a more connected node. We can also see that both the peak infection and death rates are quite high, with about 66 students dying on average.
 
     \begin{figure}[h!]
         \centering
             \includegraphics[width=0.95\linewidth]{figures/Networks/Simulations/Simulation_Nothing.png} 
-        \caption{Simulation of the spread of an unknown disease in the network. In the x-axis, we have steps which is an arbitrary representation of time. In the y-axis the proportion of the network that each category has at any given time. Each red, blue, and red, line represent one of the 200 simulations. Red represents infected, Blue represents immunized, and Black represents dead.}
+        \caption{Simulation of the spread of an unknown disease in the network. In the x-axis, we have steps which is an arbitrary representation of time. In the y-axis the proportion of the network that each category has at any given time. Each red, blue, and red, line represents one of the 200 simulations. Red represents infected, Blue represents immunized, and Black represents dead.}
         \label{figure:simulationsA}
     \end{figure}   
 
 
-For the second case (figure \ref{figure:simulationsB}), we introduce a vaccine. As expected the death rate drops dramatically, with about 23 students dying on average and an almost entirely immunized population in all cases. The peak of infections is reduced by more than half and is easier to predict when the worse time is going to happen.
+For the second case (figure \ref{figure:simulationsB}), we introduce a vaccine. As expected the death rate drops dramatically, with about 23 students dying on average and an almost entirely immunized population in all cases. The peak of infections is reduced by more than half and is easier to predict when the worst time is going to happen.
 
     \begin{figure}[h!]
         \centering
             \includegraphics[width=0.95\linewidth]{figures/Networks/Simulations/Simulation_Vaccine_30.png} 
-        \caption{Simulation of the spread of an unknown disease in the network. In the x-axis, we have the steps in time. In the y-axis the proportion of the network that each category has at any given time. Each red, blue, and red, line represent one of the 200 simulations. Red represents infected, Blue represents immunized, and Black represents dead. A vaccine is introduced at t = 10 which suddenly spikes the immunization ratio and lower dead rate}
+        \caption{Simulation of the spread of an unknown disease in the network. In the x-axis, we have the steps in time. In the y-axis the proportion of the network that each category has at any given time. Each red, blue, and red, line represents one of the 200 simulations. Red represents infected, Blue represents immunized, and Black represents dead. A vaccine is introduced at t = 10 which suddenly spikes the immunization ratio and lowers dead rate}
         \label{figure:simulationsB}
     \end{figure}  
 
@@ -708,7 +730,7 @@ We also have the option of running this type of analysis against any layout of a
         \includegraphics[width=\linewidth]{figures/Networks/Video/Graph_Infection_90_Infected___manual.png}
         \caption{d}
     \end{minipage}
-    \caption{A simulation of a disease advancing through the School Network using an MDS layout. Each sub-figure represents the disease advance after (a) 0 steps with 5 random initials infected (b) 30 steps (c) 60 steps (d) 90 steps. Infected people are highlighted in violet, and each school is highlighted in a different color. The disease starts in H1 and spread to closer contacts. H5 and all isolated components are spared because is not connected and thus impossible to reach in this particular model. The complete video of the simulation can be found at \url{https://github.com/uit-hdl/mimisbrunnr/blob/main/results/network/simulation.mp4}}
+    \caption{A simulation of a disease advancing through the School Network using an MDS layout. Each sub-figure represents the disease advance after (a) 0 steps with 5 random initials infected (b) 30 steps (c) 60 steps (d) 90 steps. Infected people are highlighted in violet, and each school is highlighted in a different color. The disease starts in H1 and spreads to closer contacts. H5 and all isolated components are spared because is not connected and thus impossible to reach in this particular model. The complete video of the simulation can be found at \url{https://github.com/uit-hdl/mimisbrunnr/blob/main/results/network/simulation.mp4}}
     \label{fig:networkVideo}
 \end{figure}
 
@@ -722,7 +744,3 @@ We also have the option of running this type of analysis against any layout of a
     %\caption{A simulation of a disease advancing through the School Network using a MDS layout. Each sub-figure represent the disease advance after (a) 0 steps (b) 30 steps (c) 60 steps (d) 90 steps. Infected people are highlighted in violet, each school is highlighted in a different color. The disease start in H1 and spread to closer contacts. H5 is spared because is not connected and thus impossible to reach in this particular model. The complete video of the simulation can be found at \url{https://github.com/uit-hdl/mimisbrunnr/blob/main/results/network/simulation.mp4}}
     %\label{fig:networkVideo}
 %\end{figure}
-
-\section{Final}
-
-You can learn more about how to draw a network in Paper F \ref{chapter:chapterListPapers}. Furthermore, all the code which generates figures and tables for this thesis is available in our GitHub repository. Several other good and free resources exist online %https://bdpedigo.github.io/networks-course/plotting_networks.html
